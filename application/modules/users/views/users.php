@@ -23,9 +23,9 @@
 						{
 					?>
                     <tr>
-                        <td>1</td>
+                        <td><?php echo $row->id?></td>
                         <td><?php echo $row->username ?></td>
-                        <td></td>
+                        <td><?php echo $row->password?></td>
                     </tr>
                     <?php } ?>
                 </tbody>

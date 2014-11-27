@@ -4,10 +4,17 @@
     </div>
     <div class="panel-body">
     	<div class="table-responsive">
-            <form action="">
+            <form action="<?php echo base_url().'users/save'?>" method="post">
             <div class="form-group">
+                
                 <label>Username</label>
-                <input name="username" class="form-control" placeholder="Enter Username">
+                <input name="username" class="form-control" placeholder="Enter Username" value="<?php echo @$result->username?>">
+
+                <label>Password</label>
+                <input name="password" class="form-control" placeholder="Enter Password" value="<?php echo @$result->password?>">
+                
+                <input type="hidden" name="id" value="<?php echo @$result->id ?>" />
+                <button type="submit" class="btn btn-default">Submit Button</button>
             </div>
             </form>
         </div>

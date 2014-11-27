@@ -184,6 +184,9 @@
                     <li>
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url()."users"?>"><i class="fa fa-fw fa-file"></i> User Page</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

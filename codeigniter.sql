@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2014-11-27 00:09:21
+Date: 2014-11-27 22:21:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `users` (
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
@@ -32,3 +32,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` VALUES ('1', 'ant', null);
 INSERT INTO `users` VALUES ('2', 'bird', null);
 INSERT INTO `users` VALUES ('3', 'cat', null);
+INSERT INTO `users` VALUES ('4', 'dog', null);
+INSERT INTO `users` VALUES ('5', 'euro', null);
+INSERT INTO `users` VALUES ('6', '1234', null);
+INSERT INTO `users` VALUES ('7', 'hong', '12345');

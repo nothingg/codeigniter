@@ -9,13 +9,14 @@ class Users extends MX_Controller {
         //$this->load->model('about/about_model','about');
     }
 
+    /*
     function index()
     {
 		$this->template->set('foo', 'data'); 
 		$this->template->build('users', array('message' => 'Hi there!'));
     }
-
-    function lists()
+    */
+    function index()
     {
 		$result = $this->users->get();
 		$this->template->set('result',$result);
@@ -24,8 +25,21 @@ class Users extends MX_Controller {
 
     function form($id = null)
     {
+        if($id != null){
+            $result = $this->users->get_row($id);
+            $this->template->set('result',$result);
+        }
         $this->template->build('form');
     }
+
+    function save()
+    {
+        //debug($_POST);
+        $id = $this->users->save($_POST);
+        redirect('users/form/'.$id);
+    }
+
+    
 }
 
 

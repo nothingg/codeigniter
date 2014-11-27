@@ -10,11 +10,28 @@ class Users_model extends MY_Model{
 
 	function get()
 	{
-				$this->db->order_by('id');
+		$this->db->order_by('id');
 		$query = $this->db->get($this->table);
 		return $query->result();
 	}
+	function get_row($id)
+	{ 
+		$this->db->where('id', $id);
+		$query = $this->db->get('users');
+		return $query->row();
 
+	}
+
+	function save($data){
+		if($data['id']){
+			$this->db->where('id', $data['id']);
+			$this->db->update('users' , $data);
+			return $data['id'];
+		}else{
+			$this->db->insert('users' , $data);
+			return $this->db->insert_id();
+		}
+	}
 }
 
 ?>
