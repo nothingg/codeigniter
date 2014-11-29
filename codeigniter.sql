@@ -10,10 +10,27 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2014-11-27 22:21:28
+Date: 2014-11-29 17:43:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for address
+-- ----------------------------
+DROP TABLE IF EXISTS `address`;
+CREATE TABLE `address` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `province` varchar(200) DEFAULT NULL,
+  `amphur` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of address
+-- ----------------------------
+INSERT INTO `address` VALUES ('1', 'bangkok', 'sukumvid');
+INSERT INTO `address` VALUES ('2', 'ratchaburi', 'photharam');
 
 -- ----------------------------
 -- Table structure for users

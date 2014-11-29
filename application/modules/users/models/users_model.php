@@ -32,6 +32,12 @@ class Users_model extends MY_Model{
 			return $this->db->insert_id();
 		}
 	}
+
+	function get2tb($tb)
+	{
+		$query = $this->db->get($tb);
+		return $query->result();
+	}
 }
 
 ?>
