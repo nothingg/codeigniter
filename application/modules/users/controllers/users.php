@@ -39,13 +39,31 @@ class Users extends MX_Controller {
         redirect('users/form/'.$id);
     }
 
-    function all2tb()
+    function all2tbArr()
     {
         //$data['users'] = $this->users->get2tb('users');
         //$data['address'] = $this->users->get2tb('address');
 
         $data['username'] = 'bird';
         $data['password'] = '1234';
+
+        $this->template->set('data',$data);
+        $this->template->build('twotable-arr');
+    }
+    function all2tbObj()
+    {
+        $data = new stdClass;
+        $data->username = 'bird';
+        $data->password = '1234';
+
+        $this->template->set('data',$data);
+        $this->template->build('twotable-obj');
+    }
+
+    function all2tb()
+    {
+        $data['users'] = $this->users->get2tb('users');
+        $data['address'] = $this->users->get2tb('address');
 
         $this->template->set('data',$data);
         $this->template->build('twotable');
