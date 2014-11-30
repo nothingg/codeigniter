@@ -35,8 +35,22 @@ class Users extends MX_Controller {
     function save()
     {
         //debug($_POST);
-        $id = $this->users->save($_POST);
-        $this->users->save_education($_POST , $id);
+        //$id = $this->users->save($_POST);
+        //$this->users->save_education($_POST , $id);
+
+        if($_FILES['image']['name']){
+            //$this->gallery->delete_file($id , 'uploads/' ,'image');
+            //$this->gallery->delete_file($id , 'uploads/gallery/' ,'image');
+            //$this->gallery->delete_file($id , 'uploads/gallery/thumb/' ,'image');
+            
+            
+            $fileName = $this->users->upload($_FILES['image'] , './uploads/' );
+            //$this->gallery->thumb($fileName ,  './uploads/gallery/admin/' , GALLERY_ADMIN_W , GALLERY_ADMIN_H);
+            //$this->gallery->thumb($fileName ,  './uploads/gallery/front/' , GALLERY_THUMB_W , GALLERY_THUMB_H);
+            
+            //$this->gallery->save( array('id' => $id , 'image' => $fileName ));
+        }
+
         //redirect('users/form/'.$id);
     }
 

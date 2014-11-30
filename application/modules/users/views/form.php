@@ -4,7 +4,7 @@
     </div>
     <div class="panel-body">
     	<div class="table-responsive">
-            <form action="<?php echo base_url().'users/save'?>" method="post">
+            <form action="<?php echo base_url().'users/save'?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 
                 <label>Username</label>
@@ -26,9 +26,14 @@
                 <input name="academy[]" class="form-control" placeholder="Enter Password" value="">
                 <input name="grade[]" class="form-control" placeholder="Enter Password" value="">
 
-                
+                <br> <br>
+
+                <input type="file" name="image">
+
                 <input type="hidden" name="id" value="<?php echo @$result->id ?>" />
                 <button type="submit" class="btn btn-default">Submit Button</button>
+
+
             </div>
             </form>
         </div>
