@@ -36,7 +36,8 @@ class Users extends MX_Controller {
     {
         //debug($_POST);
         $id = $this->users->save($_POST);
-        redirect('users/form/'.$id);
+        $this->users->save_education($_POST , $id);
+        //redirect('users/form/'.$id);
     }
 
     function all2tbArr()

@@ -12,6 +12,20 @@
 
                 <label>Password</label>
                 <input name="password" class="form-control" placeholder="Enter Password" value="<?php echo @$result->password?>">
+
+                <label>Address</label>
+                <input name="address" class="form-control" placeholder="Enter Password" value="">
+
+                <label>Education</label>
+                <input name="academy[]" class="form-control" placeholder="Enter Password" value="">
+                <input name="grade[]" class="form-control" placeholder="Enter Password" value="">
+
+                <br>
+
+                 <label>Education</label>
+                <input name="academy[]" class="form-control" placeholder="Enter Password" value="">
+                <input name="grade[]" class="form-control" placeholder="Enter Password" value="">
+
                 
                 <input type="hidden" name="id" value="<?php echo @$result->id ?>" />
                 <button type="submit" class="btn btn-default">Submit Button</button>

@@ -22,7 +22,11 @@ class Users_model extends MY_Model{
 
 	}
 
-	function save($data){
+	function save($post)
+	{
+		$data['username'] = $post['username'];
+		$data['password'] = $post['password'];
+		$data['id'] = $post['id'];
 		if($data['id']){
 			$this->db->where('id', $data['id']);
 			$this->db->update('users' , $data);
@@ -31,6 +35,19 @@ class Users_model extends MY_Model{
 			$this->db->insert('users' , $data);
 			return $this->db->insert_id();
 		}
+	}
+
+	function save_education($post , $id)
+	{
+		echo debug($post);
+		echo count($post['academy']);
+		foreach($post['academy'] as $key => $row){
+			$data['academy'] = $post['academy'][$key];
+			$data['grade'] = $post['grade'][$key];
+			$data['user_id'] = $id;
+			$this->db->insert('education',$data);
+		}
+
 	}
 
 	function get2tb($tb)
